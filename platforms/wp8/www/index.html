@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <meta name="format-detection" content="telephone=no" />
+        <!-- Other used options are: width=device-width, height=device-height, target-densitydpi=device-dpi
+             WARNING:
+              for iOS 7, remove width=device-width and height=device-height. See https://issues.apache.org/jira/browse/CB-4323
+              for Android, target-densitydpi=device-dpi could cause a small size of the app -->
+        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1" />
+        <!-- disable default highlight on old mobile IE -->
+        <meta name="msapplication-tap-highlight" content="no"/>
+        <title>Myosh</title>
+    <style>
+     
+    </style>
+    </head>
+    <body style='margin: 0px; -ms-touch-action:none;'>
+    	<script type="text/javascript">
+			// removes the status bar on iOS, requires org.apache.cordova.statusbar
+	        document.addEventListener("deviceready", function() { StatusBar.hide(); }, false);
+	        
+	        if(navigator.userAgent.indexOf('IEMobile/10') != -1) {
+	        	document.body.style.background = 'white';
+	        }
+                document.body.onscroll = function() {
+                      window.alert("CAGO EN TO");
+                }
+
+    </script>
+    	</script>
+        <!-- Be sure that network plugin is enabled -->
+        <script type="text/javascript" src="cordova.js"></script>
+
+        <!-- Define your vaadin url here -->
+        <script>
+            // Mandatory: The url of your Vaadin mobile app.
+            // window.vaadinAppUrl = 'http://10.64.12.117:8080/MyoshTouchkit';
+            window.vaadinAppUrl = 'https://t3.myosh.com/MyoshTouchkit/';
+            window.vaadinAppUrl = 'http://192.168.1.146:8080/MyoshTouchkit/';
+            window.alert(window.vaadinAppUrl);
+
+            // Optional: You could disable iframe for certain devices.
+            // window.iframeDisabled = true;
+
+            // Optional: Add a top margin, useful to avoid status bar overlapping app.
+            // Note, that the recomended way is to use the Cordova StatusBar plugin.
+            // window.iframeTopMargin = /(iPhone|iPad).+ OS (7|8)/i.test(navigator.userAgent) ? 20 : 0;
+            window.iframeTopMargin = 40;
+        </script>
+
+        <!-- Make Vaadin mobile script load the app and route cordova events to it -->
+        <script type="text/javascript" src="vaadinMobile.js"></script>
+        <script type="text/javascript" src="camera.js"></script>
+        <script type="text/javascript" src="file_transfer.js"></script>
+
+		<p style="width: 100%; margin-top: 10%; text-align: center; color: #888;">Loading...</p>
+    </body>
+</html>
